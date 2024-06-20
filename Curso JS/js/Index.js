@@ -76,4 +76,15 @@ function soma(valor, valor2){
 };
 
 var totaal = soma(138,-38);
-document.write('<br> <br>'+totaal);
+document.write('<br> <br> valor retorndado da function de soma, passando 138 e -38: '+totaal);
+
+function alertaHello(){
+    alert("Olaa");
+}; // chamando pelo button usando ONLIK
+
+function paraCelsius(valorFahrenheit){
+    return (5/9) * (valorFahrenheit - 32);
+};
+
+var temp = paraCelsius(77);
+document.write("<br> A temperatura e de " + temp + "º")
