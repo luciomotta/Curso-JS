@@ -16,13 +16,27 @@
         <button ondblclick="eventoDbClick()">Click 2x</button>
 
     </div>
+    <br>
+    <p1 style="display: flex; justify-content: center;"><span style="color: brown;" > onmousedown </span> p\ ativar o body quando for clicado no corpo p\ ativar uma alerta </p1>
 
-       <!--Comandos de eventos do-->
-    <div id="test" onmouseover="viraVermelho()" style=" margin: auto; width: 80%; height: 200px; background: blue;">   
-       
+       <!--Comandos de eventos do mouse -->
+    <div id="test" onmouseout="viraAzul()" onmouseover="viraVermelho()" style=" margin: 15px; width: 96%; height: 200px; background: blue;">   
+       <p1>Ações p\ entrada e saida do Mouse na DIV</p1>
     </div>
 
-    <table border="1" padding="4">
+    <textarea id="test02" onmousemove="AddTexto()" rows="10" cols="115%" style="margin: 15px;"></textarea>
+
+    <div >
+       <select onchange="mudou()" id="list">
+              <option value="1">Valor 1</option>
+              <option value="2">Valor 2</option>
+              <option value="3">Valor 3</option>
+              <option value="4">Valor 4</option>
+       </select>
+       <br>
+       <input id="input" onblur="eventClick()" onfocus="trocaColorInput()" style="padding: 80px; font-size: 25px;" type="text" placeholder="Digite Alguma coisa  [Focado troca a cor do input (onfocus())]" type="text">
+    </div>
+    <table border="1" padding="4" >
         <caption><b>Eventos suportados por HTML 4.01 e XHTML</b></caption>
         <tbody><tr>
           <th>Evento</th>  
@@ -154,5 +168,5 @@
 <script src="js/Index.js"></script>  <!--Referenciando um arq externo do JS [sempre ao final do Body
         P\ ser renderizado ao final do DOM]-->
 <script src="js/Aula02.js"></script>    
-</body>
+</body >
 </html>

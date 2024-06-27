@@ -10,8 +10,6 @@ body {
     line-height: 1.6;
     background-color: #f0f0f0;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 header {
@@ -60,9 +58,16 @@ main {
 div {
     display: flex;
     flex-direction: column;
-    align-items: center 
 }
 
 table {
-    margin-top: 20%;
+    margin-top: 10%;
 }
+
+div#test {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+}
+
