@@ -32,6 +32,16 @@ Mercado[3] = "Tatico";
 console.log(Mercado);
 
 
+/*----------Métodos Para Arrays (Matrizes)------------------*/
+document.getElementById('test').innerHTML = Mercado.join(" - ");
+
+Mercado.pop(); //Remove o Ultimo Item da LISTA
+Mercado.push('Qualquer'); //ADD irem´s a LISTA
+Mercado.shift();   //Remove o 1º item da LISTA
+
+document.getElementById('write').innerHTML = Mercado.join(" - ");
+document.getElementById('write').textContent = 'Usando Metodos: POP() / PUSH() / shift()';
+
 
 
 
