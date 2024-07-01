@@ -25,5 +25,5 @@ localStorage.setItem('contador', contador)
 const texto_C = document.getElementById('texto_C')
 
 //Criar elemtnto para apreesentar contador
-texto_C.textContent = '<br><br>esta pagina foi recarregada <b>' + contador+'</b> vezes.';
+//texto_C.textContent = '<br><br>esta pagina foi recarregada <b>' + contador+'</b> vezes.';
 console.log(contador+' Foi Recarregado..')
