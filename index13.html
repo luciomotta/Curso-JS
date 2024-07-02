@@ -17,6 +17,7 @@
             height: auto;
         }
     </style>
+    <script src="js/JS_Geral.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -39,7 +40,6 @@
             <a href="#" onclick="mostrarExplicacao('comentarios')">Comentários em JS</a>
             <a href="#" onclick="mostrarExplicacao('funcoes')">Funções em JS</a>
         </nav>
-
         <p id="test"></p><br>
         <input style="padding: 7%; font-size: 40px;" type="text" id="nome" placeholder="Digite seu Nome">
         <button style="padding: 50px;" onclick="Verificar()">Verificar</button>
@@ -64,15 +64,20 @@
         <div id="explicacao">
             <!-- Área onde serão exibidas as explicações -->
         </div>
+
+        <h2>Exemplo de Uso da Função: recarregarPagina(apos 5seg)</h2>
+        <p>Clique no botão abaixo para recarregar a página e ver o contador:</p>
+        <!-- Botão que chama a função quando clicado -->
+        <button onclick="recarregarPagina()">Recarregar Página</button>
+        <!-- Container para exibir o contador -->
+        <p id="texto_C">Esta página foi recarregada: <b id="contador"></b> vezes.</p>
         
-        <script src="js/Index.js"></script>  <!-- Referenciando um arquivo externo de JS -->
         <script src="js/Aula13.js"></script>
-        <script src="js/JS_Geral.js"></script>
+        <script src="js/JS_Geral.js"></script>     
     </main>
     <footer>
         <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
     </footer>
-
 
     <script>
         // Função para exibir a explicação conforme o link clicado na navbar

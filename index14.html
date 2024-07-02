@@ -38,19 +38,25 @@
             <a href="#" onclick="mostrarExplicacao('comentarios')">Comentários em JS</a>
             <a href="#" onclick="mostrarExplicacao('funcoes')">Funções em JS</a>
         </nav>
-
         <div id="explicacao">
             <!-- Área onde serão exibidas as explicações -->
         </div>
-        
-        <script src="js/Index.js"></script>  <!-- Referenciando um arquivo externo de JS -->
-        <script src="js/Aula14.js"></script>
-        <script src="js/JS_Geral.js"></script>
+
+        <h1 style=" text-align-last: center;">Metodo <span style="color: brown;">Switch</span></h1>
+        <div style=" display: flex; align-items: center;">
+            <p id="teste"></p><br>
+            <input id="cor" style="margin: 5%; padding: 3%; font-size: 40px;" type="text" placeholder="Digite uma cor">
+            <button onclick="verificaCor()" style="padding: 5%;">verificar</button>
+            <script src="js/Aula14.js"></script>
+            <script>
+                DiaSemana();
+            </script>
+
+        </div>
     </main>
     <footer>
         <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
     </footer>
-
 
     <script>
         // Função para exibir a explicação conforme o link clicado na navbar
