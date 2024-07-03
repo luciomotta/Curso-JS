@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .switch-container img {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Página Inicial</a>
+            <a href="index10.html">Aula 2-10</a>
+            <a href="index11.html">Aula 11</a>
+            <a href="index13.html">Aula 13</a>
+            <a href="index14.html">Aula 14</a>
+            <a href="index15.html">Aula 15</a>
+        </nav>
+        <h1>Curso de JavaScript</h1>
+        <p>Exemplos básicos</p>
+    </header>
+    <main id="main">
+        <nav class="navbar">
+            <a href="#" onclick="mostrarExplicacao('titulo_lacos')">Laços em JS</a>
+            <a href="#" onclick="mostrarExplicacao('titulo_contador')">Contador em JS</a>
+            <a href="#" onclick="mostrarExplicacao('titulo_dropdown')">ADD inf + for em JS</a>
+            <a href="#" onclick="mostrarExplicacao('titulo_array')">Array em JS</a>
+            <a href="#" onclick="mostrarExplicacao('explicacao_geral')">Explicação Geral</a>
+        </nav>
+        <div id="explicacao">
+            <!-- Área onde serão exibidas as explicações -->
+        </div>
+        <div>
+
+            <section style="display: flex; margin: 1.5%; justify-content: center;">
+                <select id="option_user"onchange="contador()">
+                    <option  value=''> Selecione um N°</option>
+                    <option  value='5'> 0-5</option>
+                    <option  value='15'> 5-15</option>
+                    <option  value='30'> 15-30</option>
+                </select>
+                <p>ou</p>
+                <input id="input_user" onchange="contador()" type="text" placeholder="Digite o Nº de repetição">
+            </section>
+
+            <section style="display: flex; margin: 1.5%; flex-direction: column;">
+                <select id="ano">
+                    <option select disabled>Selecione o ano</option>
+                </select>
+            </section>
+
+            <p style="text-align: center;"> Uma lista[  ], separada no JS: <span id="car" style="color: red"></p>
+            <p id="test"></p>
+
+        </div>
+        
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
+    </footer>   
+
+    <script src="js/Aula15.js"></script>
+    <script>
+        // Função para exibir a explicação conforme o link clicado na navbar
+        function mostrarExplicacao(secao) {
+            // Limpa a div de explicação antes de adicionar o novo conteúdo
+            document.getElementById("explicacao").innerHTML = "";
+
+            // Variável para armazenar o conteúdo de explicação
+            let conteudoExplicacao = "";
+
+            // Switch case para definir o conteúdo de explicação com base na seção selecionada
+            switch (secao) {
+                
+                case 'titulo_lacos':
+                    conteudoExplicacao = `
+                        <h2>Laços de Repetição em JavaScript</h2>
+                        <p>
+                            Laços oferecem uma maneira fácil e rápida de executar uma ação repetidas vezes.
+                        </p>
+                    `;
+                    break;
+                case 'titulo_contador':
+                    conteudoExplicacao = `
+                        <h2>Contador com Alteração de Estilo</h2>
+                        <p>
+                            Para contar até o valor inserido pelo usuário e mudar o estilo da página:
+                            <br>
+                            <code>
+                                for (let i = 1; i <= N_1; i++) {<br>
+                                &nbsp;&nbsp;if (i === N_1) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("test").innerHTML += i + '.';<br>
+                                &nbsp;&nbsp;} else {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("test").innerHTML += i + ", ";<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;elemento.style.backgroundColor = "yellow";<br>
+                                }<br>
+                                elemento.style.color = "blue";
+                            </code>
+                        </p>
+                    `;
+                    break;
+                case 'titulo_dropdown':
+                    conteudoExplicacao = `
+                        <h2>Preenchimento de Dropdown com Anos</h2>
+                        <p>
+                            Para preencher um dropdown com anos a partir do ano atual até 1990:
+                            <br>
+                            <code>
+                                var data_user = new Date().getFullYear();<br>
+                                for (let i = data_user; i >= 1990; i--) {<br>
+                                &nbsp;&nbsp;document.getElementById("ano").innerHTML += "<option value='" + i + "'>" + i + "</option>";<br>
+                                }
+                            </code>
+                        </p>
+                    `;
+                    break;
+                case 'titulo_array':
+                    conteudoExplicacao = `
+                        <h2>Iteração sobre um Array</h2>
+                        <p>
+                            Para iterar sobre um array e exibir seus elementos:
+                            <br>
+                            <code>
+                                const Carro = ["Porshe", "GM", "VW", "Ferrari"];<br>
+                                var tamanho = Carro.length;<br>
+                                for (let i = 0; i < tamanho; i++) {<br>
+                                &nbsp;&nbsp;document.getElementById('car').innerHTML += Carro[i] + ' ';<br>
+                                }
+                            </code>
+                        </p>
+                    `;
+                    break;
+                case 'explicacao_geral':
+                    conteudoExplicacao = `
+                        <h2>Explicação Geral da Página</h2>
+                        <p>
+                            A página utiliza conceitos fundamentais de programação, como variáveis, estruturas condicionais (if/else), loops (for), manipulação de elementos HTML via JavaScript, e lógica de programação para implementar funcionalidades como contagem dinâmica, preenchimento de dropdowns e iteração sobre arrays.
+                        </p>
+                    `;
+                    break;
+                default:
+        conteudoExplicacao = `<p>Selecione uma seção para visualizar a explicação.</p>`;
+}
+
+            // Atualiza a div de explicação com o conteúdo montado
+            document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+        }
+
+        // Função para exibir um alerta ao clicar no botão
+        function alertaHello() {
+            alert("Olá!");
+        }
+    </script>
+
+</body>
+</html>

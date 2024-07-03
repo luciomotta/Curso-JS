@@ -58,6 +58,7 @@ main {
 .navbar {
     background-color: #333;
     overflow: hidden;
+    display: flex;
 }
 
 .navbar a {

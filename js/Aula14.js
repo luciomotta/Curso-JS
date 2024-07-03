@@ -43,27 +43,27 @@ function DiaSemana() {
     console.log(dia);
     switch (dia) {
         case 1:
-            Document.getElementsByTagName(main).write('Hoje e Segunda-Feira')
+            document.write('<br> Hoje e Segunda-Feira')
             break;
         case 2:
-            Document.getElementsByTagName(main).write('Hoje e Segunda-Feira')
+            document.write('Hoje e Segunda-Feira')
 
-            Document.write('Hoje e Terça-Feira')
+            document.write('<br><br> Hoje é Terça-Feira ');
             break;
         case 3:
-            Document.write('Hoje e Quarta-Feira')
+            document.write('Hoje e Quarta-Feira')
             break;
         case 4:
-            Document.write('Hoje e Quinta-Feira')
+            document.write('Hoje e Quinta-Feira')
             break;
         case 5:
-            Document.write('Hoje e Sexta-Feira')
+            document.write('Hoje e Sexta-Feira')
             break;
         case 6:
-            Document.write('Hoje e Sabado')
+            document.write('Hoje e Sabado')
             break;
         case 7:
-            Document.write('Hoje e Domingo')
+            document.write('Hoje e Domingo')
             break;
         default:
             console.log('Erro p\ identificar os dias da semana')

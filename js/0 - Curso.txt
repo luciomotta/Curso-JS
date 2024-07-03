@@ -1,0 +1,40 @@
+
+Curso Javascript Completo: Aula 01 - JS Interno e Externo
+
+Curso Javascript Completo: Aula 02 - Tipos de Saída
+
+Curso Javascript Completo: Aula 03 - Declarações
+
+Curso Javascript Completo: Aula 04 - Sintaxe
+
+Curso Javascript Completo: Aula 05 - Comentários
+
+Curso Javascript Completo: Aula 06 - Var Let Const
+
+Curso Javascript Completo: Aula 07 - Operadores
+
+Curso Javascript Completo: Aula 08 - Funções
+
+Curso Javascript Completo: Aula 09 - Objetos
+
+Curso Javascript Completo: Aula 10 - Eventos
+
+Curso Javascript Completo: Aula 11 - Array (Matrizes)
+
+Curso Javascript Completo: Aula 12 - Métodos Para Arrays (Matrizes)
+
+Curso Javascript Completo: Aula 13 - If e Else
+
+Curso Javascript Completo: Aula 14 - Switch
+
+Curso Javascript Completo: Aula 15 - Laço de Repetição For
+
+Curso Javascript Completo: Aula 16- SetTimeout e SetInterval
+
+Curso Javascript Completo: Aula 17 - Classes
+
+Curso Javascript Completo: Aula 18 - Manipulação de Datas
+
+Curso Javascript Completo: Aula 19 - JSON
+
+Curso Javascript Completo: Aula 20 - Projeto Lista de Tarefas

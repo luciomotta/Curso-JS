@@ -6,169 +6,296 @@
     <title>Aprendendo js Aula-10  </title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body> 
-    <div id="01">
-        <h1>Aprendendo JavaScript</h1>
-        <h2>Evento JavaScript</h2>
-        <P ID="texto"></P>
-        <!--Sequencia de evento de Click-->
-        <button onclick="eventClick()">Trocar de COR</button>
-        <button ondblclick="eventoDbClick()">Click 2x</button>
+<body>
 
-    </div>
-    <br>
-    <p1 style="display: flex; justify-content: center;"><span style="color: brown;" > onmousedown </span> p\ ativar o body quando for clicado no corpo p\ ativar uma alerta </p1>
-
-       <!--Comandos de eventos do mouse -->
-    <div id="test" onmouseout="viraAzul()" onmouseover="viraVermelho()" style=" margin: 15px; width: 96%; height: 200px; background: blue;">   
-       <p1>Ações p\ entrada e saida do Mouse na DIV</p1>
-    </div>
-
-    <textarea id="test02" onmousemove="AddTexto()" rows="10" cols="115%" style="margin: 15px;"></textarea>
-
-    <div >
-       <select onchange="mudou()" id="list">
-              <option value="1">Valor 1</option>
-              <option value="2">Valor 2</option>
-              <option value="3">Valor 3</option>
-              <option value="4">Valor 4</option>
-       </select>
-       <br>
-       <input id="input" onblur="eventClick()" onfocus="trocaColorInput()" style="padding: 80px; font-size: 25px;" type="text" placeholder="Digite Alguma coisa  [Focado troca a cor do input (onfocus())]" type="text">
-    </div>
-    <table border="1" padding="4" >
-        <caption><b>Eventos suportados por HTML 4.01 e XHTML</b></caption>
-        <tbody><tr>
-          <th>Evento</th>  
-          <th>Origem</th>
-          <th>Descrição</th>
-          <th>Elementos onde se aplica</th>
-        </tr>
-        <tr>
-               <th>onload</th>
-               <td>documento</td>
-               <td>Disparado quando documento é carregado</td>
-               <td>body,frameset</td>
-        </tr>
-        <tr>
-               <th>onunload</th>
-               <td>documento</td>
-               <td>Disparado quando documento é descarregado de janela ou de frame</td>
-               <td>body,frameset</td>
-        </tr>
-        <tr>
-               <th>onsubmit</th>
-               <td>documento</td>
-               <td>Disparado quando formulário é submetido</td>
-               <td>form</td>
-        </tr>
-        <tr>
-               <th>onreset</th>
-               <td>mouse</td>
-               <td>Disparado quando formulário é "limpado" via botão de reset</td>
-               <td>form</td>
-        </tr>
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Página Inicial</a>
+            <a href="index10.html">Aula 2-10</a>
+            <a href="index11.html">Aula 11</a>
+            <a href="index13.html">Aula 13</a>
+            <a href="index14.html">Aula 14</a>
+            <a href="index15.html">Aula 15</a>
+        </nav>
+        <h1>Curso de JavaScript</h1>
+        <p>Exemplos básicos</p>
+    </header>
+    <main id="main">
+        <nav class="navbar">
+            <a href="#" onclick="mostrarExplicacao('titulo_lacos')">Laços em JS</a>
+            <a href="#" onclick="mostrarExplicacao('titulo_contador')">Contador em JS</a>
+            <a href="#" onclick="mostrarExplicacao('titulo_dropdown')">ADD inf + for em JS</a>
+            <a href="#" onclick="mostrarExplicacao('titulo_array')">Array em JS</a>
+            <a href="#" onclick="mostrarExplicacao('explicacao_geral')">Explicação Geral</a>
+        </nav>
+        <div id="explicacao">
+            <!-- Área onde serão exibidas as explicações -->
+        </div>
+        <div>
+              <div id="01">
+                     <h1>Aprendendo JavaScript</h1>
+                     <h2>Evento JavaScript</h2>
+                     <P ID="texto"></P>
+                     <!--Sequencia de evento de Click-->
+                     <button onclick="eventClick()">Trocar de COR</button>
+                     <button ondblclick="eventoDbClick()">Click 2x</button>
+             
+                 </div>
+                 <br>
+                 <p1 style="display: flex; justify-content: center;"><span style="color: brown;" > onmousedown </span> p\ ativar o body quando for clicado no corpo p\ ativar uma alerta </p1>
+             
+                    <!--Comandos de eventos do mouse -->
+                 <div id="test" onmouseout="viraAzul()" onmouseover="viraVermelho()" style=" margin: 15px; width: 96%; height: 200px; background: blue;">   
+                    <p1>Ações p\ entrada e saida do Mouse na DIV</p1>
+                 </div>
+             
+                 <textarea id="test02" onmousemove="AddTexto()" rows="10" cols="115%" style="margin: 15px;"></textarea>
+             
+                 <div >
+                    <select onchange="mudou()" id="list">
+                           <option value="1">Valor 1</option>
+                           <option value="2">Valor 2</option>
+                           <option value="3">Valor 3</option>
+                           <option value="4">Valor 4</option>
+                    </select>
+                    <br>
+                    <input id="input" onblur="Vermelho()" onfocus="trocaColorInput()" style="padding: 80px; font-size: 25px;" type="text" placeholder="Digite Alguma coisa  [Focado troca a cor do input (onfocus())]" type="text">
+                 </div>
+                 <table border="1" padding="4" >
+                     <caption><b>Eventos suportados por HTML 4.01 e XHTML</b></caption>
+                     <tbody><tr>
+                       <th>Evento</th>  
+                       <th>Origem</th>
+                       <th>Descrição</th>
+                       <th>Elementos onde se aplica</th>
+                     </tr>
+                     <tr>
+                            <th>onload</th>
+                            <td>documento</td>
+                            <td>Disparado quando documento é carregado</td>
+                            <td>body,frameset</td>
+                     </tr>
+                     <tr>
+                            <th>onunload</th>
+                            <td>documento</td>
+                            <td>Disparado quando documento é descarregado de janela ou de frame</td>
+                            <td>body,frameset</td>
+                     </tr>
+                     <tr>
+                            <th>onsubmit</th>
+                            <td>documento</td>
+                            <td>Disparado quando formulário é submetido</td>
+                            <td>form</td>
+                     </tr>
+                     <tr>
+                            <th>onreset</th>
+                            <td>mouse</td>
+                            <td>Disparado quando formulário é "limpado" via botão de reset</td>
+                            <td>form</td>
+                     </tr>
+                     
+                     <tr>
+                            <th>onselect</th>
+                            <td>mouse</td>
+                            <td>Disparado quando texto é selecionado numa area de entrada de texto</td>
+                            <td>input type="text", ou type="password" ou textarea</td>
+                     </tr>
+                     <tr>
+                            <th>onblur</th>
+                            <td>mouse/teclado</td>
+                            <td>Disparado quando elemento de entrada do formulário perde o foco, i.é, qdo
+                             texto fora do elemento é selecionado</td>
+                            <td>a, area, button, input, select, textarea</td>
+                     </tr>
+                     <tr>
+                            <th>onchange</th>
+                            <td>mouse/teclado</td>
+                            <td>Disparado quando elemento perde o foco e foi modificado</td>
+                            <td>input, select,textarea</td>
+                     </tr>
+                     <tr>
+                            <th>onclick</th>
+                            <td>mouse</td>
+                            <td>Disparado quando botão de formulário é pressionado ou
+                             link é selecionado via click do mouse</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>ondblclick</th>
+                            <td>mouse</td>
+                            <td>Idem, mas click duplo do mouse</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onfocus</th>
+                            <td>mouse/teclado</td>
+                            <td>Disparado quando o elemento recebe foco: clicando o mouse dentro
+                             do elemento ou entrando no mesmo via Tab</td>
+                            <td>a, area, button, input, select, textarea</td>
+                     </tr>
+                     <tr>
+                            <th>onmousedown</th>
+                            <td>mouse</td>
+                            <td>Disparado quando mouse é pressionado enquanto está sobre um elementro</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onmouseup</th>
+                            <td>mouse</td>
+                            <td>Idem, mas quando mouse é despressionado</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onmousemove</th>
+                            <td>mouse</td>
+                            <td>Disparado quando mouse é movido enquanto sobre elemento</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onmouseout</th>
+                            <td>mouse</td>
+                            <td>Disparado quando mouse é movido fora do elemento onde estava</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onmouseover</th>
+                            <td>mouse</td>
+                            <td>Disparado quando cursor do mouse é movido sobre  elemento </td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onkeydown</th>
+                            <td>teclado</td>
+                            <td>Disparado quando tecla é pressionada.</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onkeypress</th>
+                            <td>teclado</td>
+                            <td>Disparado quando tecla é pressionada e liberada.</td>
+                            <td>maioria</td>
+                     </tr>
+                     <tr>
+                            <th>onkeyup</th>
+                            <td>teclado</td>
+                            <td>Disparado quando tecla  pressionada é liberada.</td>
+                            <td>maioria</td>
+                     </tr>
+                     
+                     <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                     </tr>
+                     </tbody></table>
+             <script src="js/Aula10.js"></script>
+             <script src="js/Index.js"></script>  
+             <script src="js/JS_Geral.js"></script>    
+             <!--Referenciando um arq externo do JS [sempre ao final do Body
+                     P\ ser renderizado ao final do DOM]-->
+             <script src="js/Aula02.js"></script>    
+              
+        </div>
         
-        <tr>
-               <th>onselect</th>
-               <td>mouse</td>
-               <td>Disparado quando texto é selecionado numa area de entrada de texto</td>
-               <td>input type="text", ou type="password" ou textarea</td>
-        </tr>
-        <tr>
-               <th>onblur</th>
-               <td>mouse/teclado</td>
-               <td>Disparado quando elemento de entrada do formulário perde o foco, i.é, qdo
-                texto fora do elemento é selecionado</td>
-               <td>a, area, button, input, select, textarea</td>
-        </tr>
-        <tr>
-               <th>onchange</th>
-               <td>mouse/teclado</td>
-               <td>Disparado quando elemento perde o foco e foi modificado</td>
-               <td>input, select,textarea</td>
-        </tr>
-        <tr>
-               <th>onclick</th>
-               <td>mouse</td>
-               <td>Disparado quando botão de formulário é pressionado ou
-                link é selecionado via click do mouse</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>ondblclick</th>
-               <td>mouse</td>
-               <td>Idem, mas click duplo do mouse</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onfocus</th>
-               <td>mouse/teclado</td>
-               <td>Disparado quando o elemento recebe foco: clicando o mouse dentro
-                do elemento ou entrando no mesmo via Tab</td>
-               <td>a, area, button, input, select, textarea</td>
-        </tr>
-        <tr>
-               <th>onmousedown</th>
-               <td>mouse</td>
-               <td>Disparado quando mouse é pressionado enquanto está sobre um elementro</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onmouseup</th>
-               <td>mouse</td>
-               <td>Idem, mas quando mouse é despressionado</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onmousemove</th>
-               <td>mouse</td>
-               <td>Disparado quando mouse é movido enquanto sobre elemento</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onmouseout</th>
-               <td>mouse</td>
-               <td>Disparado quando mouse é movido fora do elemento onde estava</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onmouseover</th>
-               <td>mouse</td>
-               <td>Disparado quando cursor do mouse é movido sobre  elemento </td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onkeydown</th>
-               <td>teclado</td>
-               <td>Disparado quando tecla é pressionada.</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onkeypress</th>
-               <td>teclado</td>
-               <td>Disparado quando tecla é pressionada e liberada.</td>
-               <td>maioria</td>
-        </tr>
-        <tr>
-               <th>onkeyup</th>
-               <td>teclado</td>
-               <td>Disparado quando tecla  pressionada é liberada.</td>
-               <td>maioria</td>
-        </tr>
-        
-        <tr>
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
-        </tr>
-        </tbody></table>
-<script src="js/Aula10.js"></script>
-<script src="js/Index.js"></script>  
-<script src="js/JS_Geral.js"></script>    
-<!--Referenciando um arq externo do JS [sempre ao final do Body
-        P\ ser renderizado ao final do DOM]-->
-<script src="js/Aula02.js"></script>    
-</body >
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
+    </footer>   
+
+    <script src="js/Aula15.js"></script>
+    <script>
+        // Função para exibir a explicação conforme o link clicado na navbar
+        function mostrarExplicacao(secao) {
+            // Limpa a div de explicação antes de adicionar o novo conteúdo
+            document.getElementById("explicacao").innerHTML = "";
+
+            // Variável para armazenar o conteúdo de explicação
+            let conteudoExplicacao = "";
+
+            // Switch case para definir o conteúdo de explicação com base na seção selecionada
+            switch (secao) {
+                
+                case 'titulo_lacos':
+                    conteudoExplicacao = `
+                        <h2>Laços de Repetição em JavaScript</h2>
+                        <p>
+                            Laços oferecem uma maneira fácil e rápida de executar uma ação repetidas vezes.
+                        </p>
+                    `;
+                    break;
+                case 'titulo_contador':
+                    conteudoExplicacao = `
+                        <h2>Contador com Alteração de Estilo</h2>
+                        <p>
+                            Para contar até o valor inserido pelo usuário e mudar o estilo da página:
+                            <br>
+                            <code>
+                                for (let i = 1; i <= N_1; i++) {<br>
+                                &nbsp;&nbsp;if (i === N_1) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("test").innerHTML += i + '.';<br>
+                                &nbsp;&nbsp;} else {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("test").innerHTML += i + ", ";<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;elemento.style.backgroundColor = "yellow";<br>
+                                }<br>
+                                elemento.style.color = "blue";
+                            </code>
+                        </p>
+                    `;
+                    break;
+                case 'titulo_dropdown':
+                    conteudoExplicacao = `
+                        <h2>Preenchimento de Dropdown com Anos</h2>
+                        <p>
+                            Para preencher um dropdown com anos a partir do ano atual até 1990:
+                            <br>
+                            <code>
+                                var data_user = new Date().getFullYear();<br>
+                                for (let i = data_user; i >= 1990; i--) {<br>
+                                &nbsp;&nbsp;document.getElementById("ano").innerHTML += "<option value='" + i + "'>" + i + "</option>";<br>
+                                }
+                            </code>
+                        </p>
+                    `;
+                    break;
+                case 'titulo_array':
+                    conteudoExplicacao = `
+                        <h2>Iteração sobre um Array</h2>
+                        <p>
+                            Para iterar sobre um array e exibir seus elementos:
+                            <br>
+                            <code>
+                                const Carro = ["Porshe", "GM", "VW", "Ferrari"];<br>
+                                var tamanho = Carro.length;<br>
+                                for (let i = 0; i < tamanho; i++) {<br>
+                                &nbsp;&nbsp;document.getElementById('car').innerHTML += Carro[i] + ' ';<br>
+                                }
+                            </code>
+                        </p>
+                    `;
+                    break;
+                case 'explicacao_geral':
+                    conteudoExplicacao = `
+                        <h2>Explicação Geral da Página</h2>
+                        <p>
+                            A página utiliza conceitos fundamentais de programação, como variáveis, estruturas condicionais (if/else), loops (for), manipulação de elementos HTML via JavaScript, e lógica de programação para implementar funcionalidades como contagem dinâmica, preenchimento de dropdowns e iteração sobre arrays.
+                        </p>
+                    `;
+                    break;
+                default:
+        conteudoExplicacao = `<p>Selecione uma seção para visualizar a explicação.</p>`;
+}
+
+            // Atualiza a div de explicação com o conteúdo montado
+            document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+        }
+
+        // Função para exibir um alerta ao clicar no botão
+        function alertaHello() {
+            alert("Olá!");
+        }
+    </script>
+
+</body>
 </html>

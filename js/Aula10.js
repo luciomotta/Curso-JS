@@ -1,6 +1,9 @@
 function eventClick() {
     //alert('Clicou em mim');
-    document.body.style.background = "yellow";
+    document.body.style.background = "green";
+}
+function Vermelho() {
+    document.body.style.backgroundColor= "red";
 }
 
 function eventoDbClick() {
