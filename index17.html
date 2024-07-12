@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .switch-container img {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Página Inicial</a>
+            <a href="index10.html">Aula 2-10</a>
+            <a href="index11.html">Aula 11</a>
+            <a href="index13.html">Aula 13</a>
+            <a href="index14.html">Aula 14</a>
+            <a href="index15.html">Aula 15</a>
+            <a href="index16.html">Aula 16</a>
+            <a href="index17.html">Aula 17</a>
+        </nav>
+        <h1>Curso de JavaScript</h1>
+        <p>Exemplos básicos</p>
+    </header>
+    <main id="main">
+        <nav class="navbar">
+            <a href="#" onclick="mostrarExplicacao('case1')">setInterval</a>
+            <a href="#" onclick="mostrarExplicacao('case2')">SetTimeout</a>
+            <a href="#" onclick="mostrarExplicacao('case3')">Explicação Geral</a>
+        </nav>
+        <div id="explicacao">
+            <!-- Área onde serão exibidas as explicações -->
+        </div>
+        <div>
+            <section >
+
+
+            <form id="carForm">
+                <input type="text" id="marca" placeholder="Marca">
+                <input type="text" id="modelo" placeholder="Modelo">
+                <select id="ano">
+                    <option type="number" select disabled>Selecione o ano</option>
+                </select>
+
+                <button type="button" onclick="criarCarro()">Criar Carro</button>
+            </form>
+            <a>
+            <div id="resultado"></div>
+        </section>
+
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
+    </footer>   
+
+    <script src="js/Aula17.js"></script>
+    <script>
+        function mostrarExplicacao(secao) {
+            document.getElementById("explicacao").innerHTML = "";
+            let conteudoExplicacao = "";
+    
+            switch (secao) {
+                case 'case1':
+                    conteudoExplicacao = `
+                        <h2>Classes e Objetos em JavaScript</h2>
+                        <p>
+                            Classes são "modelos" para a criação de objetos, permitindo definir propriedades e métodos comuns a todos os objetos de um mesmo tipo.
+                        </p>
+                        <p>
+                            Exemplo de declaração de uma classe Carro:
+                            <br>
+                            <code>class Carro {</code><br>
+                            <code>&nbsp;&nbsp;constructor(valor1, valor2, valor3) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;this.marca = valor1;</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;this.modelo = valor2;</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;this.ano = valor3;</code><br>
+                            <code>&nbsp;&nbsp;}</code><br>
+                            <code>&nbsp;&nbsp;BUZINA() {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;return this.modelo + " buzinou: BIBIIIIIIIIIIII";</code><br>
+                            <code>&nbsp;&nbsp;}</code><br>
+                            <code>}</code>
+                        </p>
+                    `;
+                    break;
+                case 'case2':
+                    conteudoExplicacao = `
+                        <p>
+                        <h2>Criação e manipulação de objetos da classe Carro:</h2>
+                        <br>
+                        <code>const Gol = new Carro("Volkswagen", "Gol", '2020');</code><br>
+                        <code>Gol.ano = 2024; // Alterando propriedade</code><br>
+                        <code>Gol.cor = "Preto"; // Adicionando nova propriedade</code><br>
+                        <code>delete Gol.cor; // Removendo propriedade</code>
+                    </p>
+                    <p>
+                        Este exemplo demonstra a criação de uma classe Carro, instanciando objetos dessa classe, e manipulando suas propriedades.
+                    </p>
+                    `;
+                    break;
+                case 'case3':
+                    conteudoExplicacao = `
+                        <h2>Código Fonte</h2>
+                        <p>
+                            Eventos são ações ou ocorrências que acontecem no sistema que você está programando, os quais o software pode responder.
+                        </p>
+                        <p>
+                            /** CLASSES EM JAVASCRIPT
+                            Em 2015 foi introduzido no JavaScript as Classes. As classes são um conceito 
+                            antigo em programação e várias linguagens utilizam elas. Mas no Javascript isso é 
+                            relativamente novo, por isso mesmo programadores experientes não sabem muito bem utilizar.
+
+                            Basicamente, as classes são como "fábricas" para criar objetos. 
+                            Pode se dizer que são "funções especiais" para criação de objetos.
+
+                            Assim como uma fábrica da vida real precisa das máquinas para construir os 
+                            objetos, as Classes no Javascript usam um método chamado constructor() para 
+                            fabricar os objetos.
+                            */
+
+                            class Carro{
+                                //construtor(Materia prima= PARAMETRO){propriedades}
+                                constructor(valor1, valor2, valor3){
+                                    this.marca = valor1;
+                                    this.modelo = valor2;
+                                    this.ano = valor3;
+                                }
+                                //Metodos
+                                BUZINA(){
+                                    return this.modelo + " buzinou: " +"BIBIIIIIIIIIIII";
+                                }
+                            }
+
+
+
+                            const Range = new Carro("Range Rover", "Velar", '2021');
+                            console.log(Range);
+
+                            const Gol = new Carro("Volkswagen", "Gol", '2020');
+                            console.log(Gol.marca + " " + Gol.ano+" "+Gol.BUZINA());
+
+                            const clasic = new Carro("Chevrolet", "Classic", '2015');
+
+                            //mudar o valor de uma propriedade do objeto
+                            Gol.ano = 2024;
+                            console.log("Alterando valor da propriedade ano: "+ Gol.ano );
+
+                            //Adicionar propriedade ao objeto
+                            Gol.cor = "Preto";
+                            console.log("Adicionando propriedade cor: "+ Gol.cor );
+
+                            //Removendo propriedade do objeto
+                            delete Gol.cor;
+                            console.log("Removendo propriedade cor: "+ Gol.cor );
+
+
+                            var data_user = new Date().getFullYear();
+                            for (let i=data_user; i >= 1990 ; i--){
+                                document.getElementById("ano").innerHTML += "<option value= '"+i+"'>"+ i + "</Option>";
+                            }
+
+
+                            console.log(data_user);
+                        </p>
+                    `;
+                    break;
+                default:
+                    conteudoExplicacao = `<p>Selecione uma seção para visualizar a explicação.</p>`;
+            }
+            document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .switch-container img {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Página Inicial</a>
+            <a href="index10.html">Aula 2-10</a>
+            <a href="index11.html">Aula 11</a>
+            <a href="index13.html">Aula 13</a>
+            <a href="index14.html">Aula 14</a>
+            <a href="index15.html">Aula 15</a>
+            <a href="index16.html">Aula 16</a>
+            <a href="index17.html">Aula 17</a>
+        </nav>
+        <h1>Curso de JavaScript</h1>
+        <p>Exemplos básicos</p>
+    </header>
+    <main id="main">
+        <nav class="navbar">
+            <a href="#" onclick="mostrarExplicacao('setInterval')">setInterval</a>
+            <a href="#" onclick="mostrarExplicacao('setTimeout')">SetTimeout</a>
+            <a href="#" onclick="mostrarExplicacao('explicacao_geral')">Explicação Geral</a>
+            <a href="#" onclick="mostrarExplicacao('JS')">JS Explicado</a>
+
+        </nav>
+        <div id="explicacao">
+            <!-- Área onde serão exibidas as explicações -->
+        </div>
+        <div>
+            <section >
+                <h2 style="display: flex; justify-content: center;">Tempo</h2>
+                <h2 id="tempo" style="display: flex; justify-content: center;">tempo:</h2>
+                <h4 id="tempo1" style="display: flex; justify-content: center;">0</h4>
+
+                <div style="display: flex; justify-content: center;"></div>
+                    <button onclick="ativarContagem()" style="background-color: green; width: 48%; height: 200px;">Ativar</button>
+                    <button onclick="pararContagem()" style="background-color: red; width: 48%; height: 200px;">Desativar</button>
+                </div>
+
+            </section>
+
+        </div>
+        
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
+    </footer>   
+
+    <script src="js/Aula16.js"></script>
+    <script>
+        // Função para exibir a explicação conforme o link clicado na navbar
+        function mostrarExplicacao(secao) {
+            // Limpa a div de explicação antes de adicionar o novo conteúdo
+            document.getElementById("explicacao").innerHTML = "";
+
+            // Variável para armazenar o conteúdo de explicação
+            let conteudoExplicacao = "";
+
+            // Switch case para definir o conteúdo de explicação com base na seção selecionada
+            switch (secao) {
+                case 'setTimeout':
+                    conteudoExplicacao = `
+                        <h2>setTimeout</h2>
+                        <p>
+                            O <code>setTimeout</code> é uma função que executa um bloco de código ou uma função após um determinado período de tempo especificado em milissegundos.
+                        </p>
+                        <p>
+                            Exemplo:
+                            <br>
+                            <code>
+                                setTimeout(function() {<br>
+                                &nbsp;&nbsp;alert("Mensagem após 2 segundos");<br>
+                                }, 2000);
+                            </code>
+                        </p>
+                        <p>
+                            Este método é útil para ações que você deseja atrasar sem bloquear a execução do restante do script.
+                        </p>
+                    `;
+                    break;
+                case 'setInterval':
+                    conteudoExplicacao = `
+                        <h2>setInterval</h2>
+                        <p>
+                            O <code>setInterval</code> é uma função que executa um bloco de código ou uma função repetidamente, com um intervalo fixo de tempo entre cada execução.
+                        </p>
+                        <p>
+                            Exemplo:
+                            <br>
+                            <code>
+                                setInterval(function() {<br>
+                                &nbsp;&nbsp;console.log("Mensagem a cada 3 segundos");<br>
+                                }, 3000);
+                            </code>
+                        </p>
+                        <p>
+                            É importante usar o <code>clearInterval</code> para parar a execução do código quando não for mais necessário, para evitar o uso desnecessário de recursos.
+                        </p>
+                    `;
+                    break;
+                case 'explicacao_geral':
+                    conteudoExplicacao = `
+                        <h2>Explicação Geral do Aula16.js</h2>
+                        <p>
+                            Aula16.js abrange uma variedade de conceitos importantes em JavaScript, incluindo manipulação de DOM, eventos, funções assíncronas, e mais. Este arquivo serve como uma demonstração prática de como aplicar esses conceitos para criar interações dinâmicas em uma página web.
+                        </p>
+                        <p>
+                            Ao longo do arquivo, são implementadas várias funcionalidades que demonstram a potência do JavaScript na criação de páginas web interativas e responsivas. Cada seção do código é projetada para ensinar um conceito específico, facilitando o aprendizado passo a passo.
+                        </p>
+                    `;
+                    break;
+                case 'JS':
+                    conteudoExplicacao = `
+                        <h2>Explicação do Aula16.js</h2>
+                        <p>
+                            O arquivo <code>Aula16.js</code> é um script JavaScript utilizado para demonstrar e aplicar conceitos fundamentais de programação em JavaScript, focando em interações no navegador e manipulação de elementos HTML.
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Manipulação de DOM:</strong> O script exemplifica como acessar e modificar elementos do DOM, permitindo a interação dinâmica com a página web. Por exemplo, alterando o conteúdo de texto de um elemento ou modificando seus estilos.
+                                <pre><code>// Exemplo de Manipulação de DOM
+                document.getElementById("meuElemento").textContent = "Texto atualizado!";
+                document.getElementById("meuElemento").style.color = "red";</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>setTimeout e setInterval:</strong> Ilustra o uso de <code>setTimeout</code> para executar uma ação após um delay e <code>setInterval</code> para executar ações repetidamente em intervalos fixos.
+                                <pre><code>// Exemplo de setTimeout e setInterval
+                setTimeout(() => {
+                    console.log("Executado após 2 segundos");
+                }, 2000);
+
+                setInterval(() => {
+                    console.log("Executado a cada 3 segundos");
+                }, 3000);</code></pre>
+                            </li>
+                        </ul>
+                        <p>
+                            Cada seção do arquivo <code>Aula16.js</code> é projetada para ensinar e demonstrar um conceito específico, facilitando o aprendizado e a aplicação prática de JavaScript no desenvolvimento web.
+                        </p>
+                    `;
+                    break;
+                default:
+                    conteudoExplicacao = `<p>Selecione uma seção para visualizar a explicação.</p>`;
+            }
+
+document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+
+document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+            // Atualiza a div de explicação com o conteúdo montado
+            document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+        }
+    </script>
+
+</body>
+</html>
