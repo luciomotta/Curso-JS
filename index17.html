@@ -40,6 +40,7 @@
             <a href="#" onclick="mostrarExplicacao('case1')">setInterval</a>
             <a href="#" onclick="mostrarExplicacao('case2')">SetTimeout</a>
             <a href="#" onclick="mostrarExplicacao('case3')">Explicação Geral</a>
+
         </nav>
         <div id="explicacao">
             <!-- Área onde serão exibidas as explicações -->
@@ -57,7 +58,6 @@
 
                 <button type="button" onclick="criarCarro()">Criar Carro</button>
             </form>
-            <a>
             <div id="resultado"></div>
         </section>
 
@@ -68,7 +68,7 @@
 
     <script src="js/Aula17.js"></script>
     <script>
-        function mostrarExplicacao(secao) {
+            function mostrarExplicacao(secao) {
             document.getElementById("explicacao").innerHTML = "";
             let conteudoExplicacao = "";
     
@@ -183,6 +183,27 @@
         }
 
 
+
+            function criarCarro() {
+            const marca = document.getElementById('marca').value;
+            const modelo = document.getElementById('modelo').value;
+            const ano = document.getElementById('ano').value;
+
+            const carro = new Carro(marca, modelo, ano);
+            document.getElementById('resultado').innerHTML = `
+                Marca: ${carro.marca}<br>
+                Modelo: ${carro.modelo}<br>
+                Ano: ${carro.ano}<br>
+                Buzina: ${carro.BUZINA()}<br>
+            `;
+
+            // Exemplo de adição de propriedade
+            carro.cor = "Azul";
+            document.getElementById('resultado').innerHTML += `Cor: ${carro.cor}<br>`;
+
+            // Exemplo de remoção de propriedade
+            delete carro.cor;
+        }
     </script>
 
 </body>
