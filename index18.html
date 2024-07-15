@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .switch-container img {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Página Inicial</a>
+            <a href="index10.html">Aula 2-10</a>
+            <a href="index11.html">Aula 11</a>
+            <a href="index13.html">Aula 13</a>
+            <a href="index14.html">Aula 14</a>
+            <a href="index15.html">Aula 15</a>
+            <a href="index16.html">Aula 16</a>
+            <a href="index17.html">Aula 17</a>
+            <a href="index18.html">Aula 18</a>
+            <a href="index19.html">Aula 19</a>
+            <a href="index20.html">Aula 20</a>
+        </nav>
+        <h1>Curso de JavaScript</h1>
+        <p>Exemplos básicos</p>
+    </header>
+    <main id="main">
+        <nav class="navbar">
+            <a href="#" onclick="mostrarExplicacao('case1')">Obtendo componente Data</a>
+            <a href="#" onclick="mostrarExplicacao('case2')">Formatando e comparando</a>
+            <a href="#" onclick="mostrarExplicacao('case3')">Explicação Geral</a>
+
+        </nav>
+        <div id="explicacao">
+            <!-- Área onde serão exibidas as explicações -->
+        </div>
+        <div>
+            <section id="output" >
+
+
+        </section>
+
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
+    </footer>   
+
+    <script src="js/Aula18.js"></script>
+    <script>
+            function mostrarExplicacao(secao) {
+            document.getElementById("explicacao").innerHTML = "";
+            let conteudoExplicacao = "";
+    
+            switch (secao) {
+                case 'case1':
+                    conteudoExplicacao = `
+                            <h2>Obtendo Componentes da Data</h2>
+        <p>Extrai componentes individuais da data, como ano, mês, dia, hora, minutos, segundos e milissegundos.</p>
+        <pre><code>//pegando o ANO atual c\ 4 digitos
+let ano = data.getFullYear();
+console.log(ano);
+
+//Pegar o MÊS atual
+let mes = data.getMonth();
+console.log('pegando o mes da Data: '+mes);
+
+//Pegar dia do Mês
+let dia = data.getDate();
+console.log('Dia do mes:'+dia);
+</code></pre>
+
+                    `;
+                    break;
+                case 'case2':
+                    conteudoExplicacao = `
+                     <h2>Formatando e Comparando Datas</h2>
+        <p>Mostra como formatar datas para o padrão brasileiro e como comparar datas para determinar diferenças ou verificar vencimentos.</p>
+        <pre><code>//Pegar a data no padrão BRASILEIRO = DIA/ MES / ANO
+let dataBR = data.toLocaleString('pt-BR');
+console.log('Data no padrão BR: '+dataBR);
+
+//Comparar datas < ou >. EX: VENCIMENTO DE BOLETO...
+var hoje = new Date();
+var Vencimento = new Date(2024, 6, 15);
+if (hoje > Vencimento){
+    console.log('Boleto Vencido');
+}else{
+    console.log('Boleto em dia');
+}
+</code></pre>
+                    `;
+                    break;
+                case 'case3':
+                    conteudoExplicacao = `
+                        <h2>Explicação Geral</h2>
+        <p>Este script é uma introdução à manipulação de datas com JavaScript. Ele cobre a obtenção da data atual, a extração de seus componentes, a formatação de datas e a realização de comparações simples. É útil para entender como trabalhar com datas em aplicações web, desde mostrar datas formatadas até calcular diferenças entre datas para lógicas de negócios, como vencimentos.</p>
+    
+                    `;
+                    break;
+                default:
+                    conteudoExplicacao = `<p>Selecione uma seção para visualizar a explicação.</p>`;
+            }
+            document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+        }
+    </script>
+
+</body>
+</html>

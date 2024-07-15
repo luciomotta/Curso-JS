@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .switch-container img {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Página Inicial</a>
+            <a href="index10.html">Aula 2-10</a>
+            <a href="index11.html">Aula 11</a>
+            <a href="index13.html">Aula 13</a>
+            <a href="index14.html">Aula 14</a>
+            <a href="index15.html">Aula 15</a>
+            <a href="index16.html">Aula 16</a>
+            <a href="index17.html">Aula 17</a>
+            <a href="index18.html">Aula 18</a>
+            <a href="index19.html">Aula 19</a>
+            <a href="index20.html">Aula 20</a>
+        </nav>
+        <h1>Curso de JavaScript</h1>
+        <p>Exemplos básicos</p>
+    </header>
+    <main id="main">
+        <nav class="navbar">
+            <a href="#" onclick="mostrarExplicacao('case1')">Introdução JSON</a>
+            <a href="#" onclick="mostrarExplicacao('case2')">Objeto e JSON</a>
+            <a href="#" onclick="mostrarExplicacao('case3')">Converter SJON</a>
+            <a href="#" onclick="mostrarExplicacao('case4')">Comunicação servidor Ajax</a>
+            <a href="#" onclick="mostrarExplicacao('case5')">Explicação Geral</a>
+
+        </nav>
+        <div id="explicacao">
+            <!-- Área onde serão exibidas as explicações -->
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;"> 
+            <h1 style="font-size: 3rem;">Lista de Tarefas</h1>
+            <section style="display: flex; flex-flow: row wrap; align-items: center; width: 90%;" 
+            id="tarefa" >
+                <input style="height: 120px; font-size:  2rem; width: 75%; padding-left: 10%;" 
+                type="text" placeholder="Digite sua Tarefa">
+
+                <button onclick="adicionarTarefa()" style="background-color: aquamarine; width: 25%; cursor: pointer; font-weight: bold; border: none; height: 120px; border-top-right-radius: 10px; border-bottom-left-radius: 10px;">Adicionar</button>
+            </section>
+        </div>
+        <section id="areaLista">
+            <div class="item">
+                <!-- Lista de tarefas -->
+                 <div class="item-icon">
+                    
+
+                 </div>
+                 <div class="item-nome">
+
+                 </div>
+                 <div class="item-botao">
+
+                 </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucio Motta - &copy; 2024</p>
+    </footer>   
+
+    <script src="js/Aula20.js"></script>
+    <script>
+            function mostrarExplicacao(secao) {
+            document.getElementById("explicacao").innerHTML = "";
+            let conteudoExplicacao = "";
+    
+            switch (secao) {
+                case 'case1':
+                    conteudoExplicacao = `
+
+                    `;
+                    break;
+
+                default:
+                    conteudoExplicacao = `<p>Selecione uma seção para visualizar a explicação.</p>`;
+            }
+            document.getElementById("explicacao").innerHTML = conteudoExplicacao;
+        }
+    </script>
+
+</body>
+</html>

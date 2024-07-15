@@ -74,3 +74,42 @@ main {
     background-color: #ddd;
     color: black;
 }
+
+
+/* Estilos para o conteúdo da página 20 ITEM*/
+
+
+#areaLista {
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    margin:auto auto;
+    border:1px solid blue;
+}
+
+.item {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 0 20px #ccc;
+
+}
+
+
+.item-icone{
+    flex: 20%;
+    border:1px solid orangered;
+    }
+.item-nome{
+    flex:5%;
+    border:1px solid deeppink;
+}
+.item-botao{
+    flex:60%;
+    border:1px solid
+    green;
+}
