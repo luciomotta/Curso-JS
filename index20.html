@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendendo JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         .switch-container {
@@ -54,25 +55,41 @@
             <h1 style="font-size: 3rem;">Lista de Tarefas</h1>
             <section style="display: flex; flex-flow: row wrap; align-items: center; width: 90%;" 
             id="tarefa" >
-                <input style="height: 120px; font-size:  2rem; width: 75%; padding-left: 10%;" 
-                type="text" placeholder="Digite sua Tarefa">
+                <input id="inputTarefa" type="text" placeholder="Digite sua Tarefa" style="height: 120px; font-size:  2rem; width: 75%; padding-left: 10%;">
 
-                <button onclick="adicionarTarefa()" style="background-color: aquamarine; width: 25%; cursor: pointer; font-weight: bold; border: none; height: 120px; border-top-right-radius: 10px; border-bottom-left-radius: 10px;">Adicionar</button>
+                <button id="btn-add" onclick=" addTarefa()" style="background-color: aquamarine; width: 25%; cursor: pointer; font-weight: bold; border: none; height: 120px; border-top-right-radius: 10px; border-bottom-left-radius: 10px;">Adicionar</button>
             </section>
         </div>
         <section id="areaLista">
             <div class="item">
                 <!-- Lista de tarefas -->
                  <div class="item-icon">
-                    
-
+                    <i class="fa-regular fa-circle"></i>
                  </div>
                  <div class="item-nome">
+                    <p>Teste de tarefa</p>
 
                  </div>
                  <div class="item-botao">
+                    <button class="delete" onclick="removerTarefa(this)"><i class="fas fa-trash"></i>Remover</button>
 
                  </div>
+            </div>
+
+            <div class="item clicado">
+                <!-- Lista de tarefas -->
+                 <div class="item-icon">
+                    <i class="fas fa-check-circle"></i>
+                 </div>
+                 <div class="item-nome">
+                    <p>Teste de tarefa</p>
+
+                 </div>
+                 <div class="item-botao">
+                    <button class="delete" onclick="removerTarefa(this)"><i class="fas fa-trash"></i>Remover</button>
+
+                 </div>
+            </div>
 
         </section>
     </main>
