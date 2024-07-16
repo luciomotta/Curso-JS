@@ -38,3 +38,21 @@ Curso Javascript Completo: Aula 18 - Manipulação de Datas
 Curso Javascript Completo: Aula 19 - JSON
 
 Curso Javascript Completo: Aula 20 - Projeto Lista de Tarefas
+
+
+## Aula 21 - Armazenamento Local
+
+- O armazenamento local é uma funcionalidade do navegador que permite armazenar dados no dispositivo do usuário.
+- O armazenamento local é útil para manter informações entre sessões de navegação, como preferências do usuário, configurações, etc.
+- O armazenamento local é limitado em termos de espaço de armazenamento, geralmente variando de 5 a 10 MB.
+- Existem duas formas de armazenamento local: localStorage e sessionStorage.
+- O localStorage armazena os dados permanentemente no dispositivo do usuário, mesmo após o fechamento do navegador.
+- O sessionStorage armazena os dados apenas para a sessão atual do navegador, sendo apagados ao fechar a janela.
+- Para armazenar dados no localStorage, usamos a propriedade localStorage do objeto window.
+- Para armazenar dados no sessionStorage, usamos a propriedade sessionStorage do objeto window.
+- Ambas as propriedades localStorage e sessionStorage possuem os mesmos métodos para manipular os dados: setItem, getItem, removeItem e clear.
+- O método setItem é usado para adicionar um item ao armazenamento local, passando uma chave e um valor.
+- O método getItem é usado para obter um item do armazenamento local, passando a chave do item.
+- O método removeItem é usado para remover um item do armazenamento local, passando a chave do item.
+- O método clear é usado para limpar todos os itens do armazenamento local.
+- Exemplo de uso do localStorage:

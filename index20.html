@@ -41,12 +41,11 @@
     </header>
     <main id="main">
         <nav class="navbar">
-            <a href="#" onclick="mostrarExplicacao('case1')">Introdução JSON</a>
-            <a href="#" onclick="mostrarExplicacao('case2')">Objeto e JSON</a>
-            <a href="#" onclick="mostrarExplicacao('case3')">Converter SJON</a>
-            <a href="#" onclick="mostrarExplicacao('case4')">Comunicação servidor Ajax</a>
+            <a href="#" onclick="mostrarExplicacao('case1')">Var + Tarefa</a>
+            <a href="#" onclick="mostrarExplicacao('case2')">Ação Concluida</a>
+            <a href="#" onclick="mostrarExplicacao('case3')">Ação Deletar</a>
+            <a href="#" onclick="mostrarExplicacao('case4')">Ação Enter</a>
             <a href="#" onclick="mostrarExplicacao('case5')">Explicação Geral</a>
-
         </nav>
         <div id="explicacao">
             <!-- Área onde serão exibidas as explicações -->
@@ -61,35 +60,6 @@
             </section>
         </div>
         <section id="areaLista">
-            <div class="item">
-                <!-- Lista de tarefas -->
-                 <div class="item-icon">
-                    <i class="fa-regular fa-circle"></i>
-                 </div>
-                 <div class="item-nome">
-                    <p>Teste de tarefa</p>
-
-                 </div>
-                 <div class="item-botao">
-                    <button class="delete" onclick="removerTarefa(this)"><i class="fas fa-trash"></i>Remover</button>
-
-                 </div>
-            </div>
-
-            <div class="item clicado">
-                <!-- Lista de tarefas -->
-                 <div class="item-icon">
-                    <i class="fas fa-check-circle"></i>
-                 </div>
-                 <div class="item-nome">
-                    <p>Teste de tarefa</p>
-
-                 </div>
-                 <div class="item-botao">
-                    <button class="delete" onclick="removerTarefa(this)"><i class="fas fa-trash"></i>Remover</button>
-
-                 </div>
-            </div>
 
         </section>
     </main>
@@ -106,7 +76,140 @@
             switch (secao) {
                 case 'case1':
                     conteudoExplicacao = `
+                      <div class="section">
+        <h2>Título: Inicialização de Variáveis</h2>
+        <p>Conteúdo: Este trecho do código é responsável por inicializar as variáveis utilizadas no script. Aqui, definimos o contador de tarefas, capturamos os elementos do DOM necessários para a manipulação das tarefas e definimos o ponto de entrada para adicionar novas tarefas.</p>
+        <pre><code>
+let contador = 0;
+let input = document.getElementById('inputTarefa');
+let btnAdd = document.getElementById('btn-add');
+let main = document.getElementById('areaLista');
+        </code></pre>
+    </div>
+    <div class="section">
+        <h2>Título: Adicionar Tarefa</h2>
+        <p>Conteúdo: A função 'addTarefa' é chamada quando o usuário deseja adicionar uma nova tarefa. Ela verifica se o input não está vazio, nulo ou indefinido, cria um novo item de tarefa com um ID único, e o adiciona à lista de tarefas. Após adicionar, limpa o campo de input e foca nele novamente.</p>
+        <pre><code>
+function addTarefa() {
+    ++contador;
+    let valorinput = input.value;
+    if ((valorinput.trim() !== " ") && (valorinput.trim() !== null) && (valorinput.trim() !== undefined)) {
+        let novoItem = &lt;div class="item" id="${contador}"&gt;...&lt;/div&gt;;
+        main.innerHTML += novoItem;
+        input.value = "";
+        input.focus();
+    }
+}
+        </code></pre>
+    </div>
+                    `;
+                    break;
+                case 'case2':
+                    conteudoExplicacao = `
+                    <div class="section">
+                    <h2>Título: Marcar Tarefa Como Concluída</h2>
+                    <p>Conteúdo: Esta função é acionada quando o usuário clica em uma tarefa. Ela verifica se a tarefa está marcada como concluída (classe 'clicado') e alterna seu estado, atualizando também o ícone para refletir o estado atual da tarefa.</p>
+                    <pre><code>
+            function marcarTarefa(id) {
+                var tarefa = document.getElementById(id);
+                var icone = document.querySelector('#icone_' + id + ' i');
+                if(tarefa.classList.contains("item")){
+                    tarefa.classList.add('clicado');
+                    icone.classList.replace('fa-regular', 'fas');
+                    icone.classList.replace('fa-circle', 'fa-check-circle');
+                }else{
+                    tarefa.classList.remove('clicado');
+                    icone.classList.replace('fas', 'fa-regular');
+                    icone.classList.replace('fa-check-circle', 'fa-circle');
+                }
+            }
+                    </code></pre>
+                </div>
+                    `;
+                    break;
+                case 'case3':
+                    conteudoExplicacao = `
+                     <div class="section">
+                        <h2>Título: Deletar Tarefa</h2>
+                        <p>Conteúdo: A função 'deletar' remove uma tarefa específica da lista. É chamada quando o usuário clica no botão de deletar de uma tarefa.</p>
+                        <pre><code>
+                function deletar(id) {
+                    var tarefa = document.getElementById(id);
+                    tarefa.remove();
+                }
+                        </code></pre>
+                    </div>
 
+                    `;
+                    break;
+                case 'case4':
+                    conteudoExplicacao = `
+                    <div class="section">
+                        <h2>Título: Adicionar Tarefa com Enter</h2>
+                        <p>Conteúdo: Este trecho de código adiciona um ouvinte de evento ao campo de input que, ao pressionar a tecla Enter, aciona o clique no botão de adicionar tarefa, chamando assim a função 'addTarefa'.</p>
+                        <pre><code>
+                input.addEventListener("keyup", function (event){
+                    if(event.keyCode === 13){
+                        event.preventDefault();
+                        btnAdd.click();
+                    }
+                });
+                        </code></pre>
+                    </div>
+
+                    `;
+                    break;
+                case 'case5':
+                    conteudoExplicacao = `
+                    <div class="tutorial-js">
+                        <div class="section">
+                            <h2>Título: Gerenciamento de Tarefas com JavaScript</h2>
+                            <p>Conteúdo: Este script é uma implementação básica de um gerenciador de tarefas usando JavaScript puro. Ele permite adicionar tarefas, marcar tarefas como concluídas e remover tarefas. O script manipula o DOM para atualizar a interface do usuário em resposta às ações do usuário. A lógica é dividida em funções específicas para manter o código organizado e reutilizável.</p>
+                            <pre><code>
+                    let contador = 0;
+                    let input = document.getElementById('inputTarefa');
+                    let btnAdd = document.getElementById('btn-add');
+                    let main = document.getElementById('areaLista');
+
+                    function addTarefa() {
+                        ++contador;
+                        let valorinput = input.value;
+                        if ((valorinput.trim() !== " ") && (valorinput.trim() !== null) && (valorinput.trim() !== undefined)) {
+                            let novoItem = \`&lt;div class="item" id="${contador}"&gt;...&lt;/div&gt;\`;
+                            main.innerHTML += novoItem;
+                            input.value = "";
+                            input.focus();
+                        }
+                    }
+
+                    input.addEventListener("keyup", function (event){
+                        if(event.keyCode === 13){
+                            event.preventDefault();
+                            btnAdd.click();
+                        }
+                    });
+
+                    function marcarTarefa(id) {
+                        var tarefa = document.getElementById(id);
+                        var icone = document.querySelector('#icone_' + id + ' i');
+                        if(tarefa.getAttribute('class') === "item"){
+                            tarefa.classList.add('clicado');
+                            icone.classList.remove('fa-regular', 'fa-circle');
+                            icone.classList.add('fas', 'fa-check-circle');
+                        }else{
+                            tarefa.classList.remove('clicado');
+                            icone.classList.remove('fas', 'fa-check-circle');
+                            icone.classList.add('fa-regular', 'fa-circle');
+                        }
+                    }
+
+                    function deletar(id) {
+                        var tarefa = document.getElementById(id);
+                        tarefa.remove();
+                    }
+                            </code></pre>
+                        </div>
+                    </div>
                     `;
                     break;
 
@@ -119,3 +222,4 @@
 
 </body>
 </html>
+```

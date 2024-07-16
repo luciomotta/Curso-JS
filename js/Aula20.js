@@ -9,7 +9,7 @@ function addTarefa() {
     let valorinput = input.value;
 
     //Se não for vazio, nem nulo, nem indefinido
-    if ((valorinput.trim() !== " ") && (valorinput.trim() !== null) && (valorinput.trim() !== undefined)) {
+    if ((valorinput!== "") && (valorinput !== null) && (valorinput !== undefined)) {
         let novoItem = `
                     <div class="item" id="${contador}">
                 <!-- Lista de tarefas -->
@@ -26,14 +26,12 @@ function addTarefa() {
                  </div>
             </div>
         `;
-
         //Adicionar o novo item na lista
         main.innerHTML += novoItem;
 
         //ZERAR OS CAMPINHOS
         input.value = "";
         input.focus();
-
     }
 
 }

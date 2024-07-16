@@ -12,6 +12,48 @@ var interruptor = "off";
 }
 */
 //Fuction Interruptor
+let nome = document.getElementById("nome").value.trim();
+
+document.addEventListener("keyup", function (event){
+    if (event.keyCode === 13){
+        event.preventDefault();
+        document.getElementById("btn").click();
+    }
+});
+
+// Função para verificar se o campo está vazio
+function verificarCampoVazio() {
+    var campo = document.getElementById("nome");
+    var checkbox = document.getElementById('toggleSwitch');
+
+    if (campo.value === "" || campo.value === null || campo.value === undefined) {
+        console.log("Campo vazio");
+        checkbox.checked = false;
+    } else {
+         // Marca o checkbox se o campo não estiver vazio
+    }
+    toggleLamp(); // Atualiza o estado da lâmpada com base no estado do checkbox
+}
+
+// Adiciona um ouvinte de eventos ao campo de entrada para verificar se está vazio durante a digitação
+document.getElementById("nome").addEventListener("input", verificarCampoVazio);
+
+// Chama a função verificarCampoVazio quando a página é carregada para verificar o estado inicial do campo
+document.addEventListener("DOMContentLoaded", verificarCampoVazio);
+
+function toggleLamp() {
+    var img = document.getElementById('lampimg');
+    var checkbox = document.getElementById('toggleSwitch');
+
+    if (checkbox.checked) {
+        // Se o checkbox estiver marcado (ligado), mostra a imagem de lâmpada ligada
+        img.src = 'src/img/LuzLigada.png';
+    } else {
+        // Se o checkbox não estiver marcado (desligado), mostra a imagem de lâmpada desligada
+        img.src = 'src/img/LuzDesligada.png';
+    }
+}
+
 
 function Verificar() {
     let nome = document.getElementById("nome").value.trim();
@@ -30,20 +72,6 @@ function Verificar() {
         checkbox.style.display=''
     }
 }
-
-function toggleLamp() {
-    var img = document.getElementById('lampimg');
-    var checkbox = document.getElementById('toggleSwitch');
-
-    if (checkbox.checked) {
-        // Se o checkbox estiver marcado (ligado), mostra a imagem de lâmpada ligada
-        img.src = 'src/img/LuzLigada.png';
-    } else {
-        // Se o checkbox não estiver marcado (desligado), mostra a imagem de lâmpada desligada
-        img.src = 'src/img/LuzDesligada.png';
-    }
-}
-
 
 
 
